@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
@@ -6,11 +7,16 @@ import PropTypes from 'prop-types';
 import { makeSelectPlaces } from './selectors';
 import { getPlaces } from './actions';
 
+import MapWrapper from '../../components/Map';
+
 const Map = ({ places, handleGetPlaces }) => {
-  console.log(places)
+
+  useEffect(() => {
+    handleGetPlaces();
+  },[]);
   return (
     <>
-      <button >Get places</button>
+      <MapWrapper places={places}></MapWrapper>
     </>
   );
 };

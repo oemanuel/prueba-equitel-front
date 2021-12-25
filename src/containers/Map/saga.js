@@ -6,11 +6,9 @@ import { getPlacesSuccess } from './actions';
 
 const baseUrl = 'http://localhost:3999/api';
 
-const tokenAux= 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MWMzZTFhOTE5N2I2YjU1ZjVlZmIzNGUiLCJuYW1lIjoib2VtYW51ZWwiLCJpYXQiOjE2NDAzNjcyNzksImV4cCI6MTY0Mjk1OTI3OX0.Khf3UmVdQUzHnoWouY4aXQDFbF3rKcm2yWk0WJNGcCg';
-
 const getListPlaces = (token) => {
     return axios
-        .get(baseUrl + '/list_places', { headers: { "access-token": tokenAux } })
+        .get(baseUrl + '/list_places', { headers: { "access-token": token } })
         .then(response => ({ response }))
         .catch(error => ({ error }));
 };

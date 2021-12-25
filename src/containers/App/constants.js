@@ -1,0 +1,1 @@
+export const SAVE_USER = 'prueba-equitel-front/App/SAVE_USER';
